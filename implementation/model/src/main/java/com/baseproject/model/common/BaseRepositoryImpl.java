@@ -1,10 +1,13 @@
 package com.baseproject.model.common;
 
+import java.util.Date;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
+import com.baseproject.util.utility.DateUtils;
 
 public class BaseRepositoryImpl<E extends BaseEntity> implements
 		BaseRepository<E> {
@@ -25,6 +28,10 @@ public class BaseRepositoryImpl<E extends BaseEntity> implements
 
 	@Override
 	public E save(E e) {
+		Date now = DateUtils.now();
+		e.setCreatedAt(now);
+		e.setUpdatedAt(now);
+		
 		return (E) em.merge(e);
 	}
 

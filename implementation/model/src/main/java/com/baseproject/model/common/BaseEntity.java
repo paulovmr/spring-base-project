@@ -42,6 +42,8 @@ public class BaseEntity {
 	}
 	
 	public void setCreatedAt(Date createdAt) {
-		this.createdAt = createdAt;
+		if (getId() == null && getCreatedAt() == null) {
+			this.createdAt = createdAt;
+		}
 	}
 }
