@@ -10,3 +10,7 @@ Tutorial
 * Run the script `./setup_new_project.sh <YOUR_NEW_PROJECT_NAME>` on the root directory;
 * Run a `mvn clean install && mvn eclipse:clean eclipse:eclipse` on the `implementation` directory;
 * Import your project into Eclipse and you are good to go!
+
+Developer annotations
+=====================
+* The only files modified in the Tomcat are `webapps/view` and `conf/context.xml`.
