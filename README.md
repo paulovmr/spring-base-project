@@ -8,24 +8,30 @@ Tutorial
 
  Before follow this tutorial, define your new project name, and replace it in all the `<YOUR_NEW_PROJECT_NAME>` sentences.
 
- Installing the prerequisites
+### Installing the prerequisites
 
   * Install your favorite Eclipse distribution
+
   * Install Maven 3: `sudo apt-get install maven`
 
- Installing and configuring your PostgreSQL database
+### Installing and configuring your PostgreSQL database
 
   * Install PostgreSQL 9.1: `sudo apt-get install postgresql`
+
   * Create a new user: `sudo -u postgres createuser`
    - `Enter name of role to add: <YOUR_NEW_PROJECT_NAME>`
    - `Shall the new role be a superuser? (y/n) n`
    - `Shall the new role be allowed to create databases? (y/n) n`
    - `Shall the new role be allowed to create more new roles? (y/n) n`
+
   * Create a new database: `sudo -u postgres createdb <YOUR_NEW_PROJECT_NAME>db`
+
   * Allow your new user to access and modify the new database created: `sudo -u postgres psql`
    - `postgres=# alter user <YOUR_NEW_PROJECT_NAME> with encrypted password '<YOUR_NEW_PROJECT_NAME>';`
    - `postgres=# grant all privileges on database <YOUR_NEW_PROJECT_NAME>db to <YOUR_NEW_PROJECT_NAME>;`
+
   * Install the PostgreSQL client: `sudo apt-get install postgresql-client`
+
   * To access the database: `psql -h localhost <YOUR_NEW_PROJECT_NAME>db <YOUR_NEW_PROJECT_NAME>`
    - `Password for user <YOUR_NEW_PROJECT_NAME>: <YOUR_NEW_PROJECT_NAME>`
 
@@ -35,17 +41,22 @@ Tutorial
    - Know the status: `/etc/init.d/postgresql status`
    - Restart the service: `/etc/init.d/postgresql restart`
 
- Creating your project
+### Creating your project
 
   * Create a new Github repository from this one
+
   * Clone your new repository: `git clone git@github.com:<YOUR_GITHUB_USER>/<YOUR_NEW_PROJECT_NAME>.git`
+
   * Run the script `<ROOT_DIRECTORY>/setup_new_project.sh <YOUR_NEW_PROJECT_NAME>`
+
   * Run a `mvn clean install && mvn eclipse:clean eclipse:eclipse` on the `implementation` directory
+
   * Import your project into Eclipse
 
- Deploying your application
+### Deploying your application
 
   * To start: `<ROOT_DIRECTORY>/tools/tomcat/bin/startup.sh`
+
   * To stop: `<ROOT_DIRECTORY>/tools/tomcat/bin/shutdown.sh`
 
 Developer annotations
