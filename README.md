@@ -1,12 +1,12 @@
 base-project
 ============
 
-Base maven project which uses JPA (Hibernate implementation), Spring, Resteasy and others dependencies.
+Base maven project which uses JPA (Hibernate implementation), Spring and others common dependencies.
 
 Tutorial
 ========
 
 * Create a new project from this one;
-* On all XML files, replace all occurences of the sentence `baseproject` for `<YOUR_PROJECT_NAME>`;
+* Run the script `./setup_new_project.sh <YOUR_NEW_PROJECT_NAME>` on the root directory;
 * Run a `mvn clean install && mvn eclipse:clean eclipse:eclipse` on the `implementation` directory;
-* You are good to go!
+* Import your project into Eclipse and you are good to go!

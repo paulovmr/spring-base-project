@@ -5,17 +5,12 @@
 			 version="1.0">  
 
     <persistence-unit name="baseproject-pu">
+    
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
-        <properties>  
-            <property name="hibernate.connection.url" value="jdbc:postgresql://127.0.0.1:5432/baseprojectdb" /> 
-             
+        <properties>
+			<property name="hibernate.connection.datasource" value="java:comp/env/jdbc/baseproject-ds" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />  
-            
-            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />  
-            <property name="hibernate.connection.username" value="baseproject" />  
-            <property name="hibernate.connection.password" value="baseproject" />  
-            
             <property name="hibernate.hbm2ddl.auto" value="update" />  
             <property name="hibernate.show_sql" value="true" />  
         </properties>
