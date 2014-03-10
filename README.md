@@ -8,12 +8,12 @@ Tutorial
 
  Before follow this tutorial, define your new project name, and replace it in all the `<YOUR_NEW_PROJECT_NAME>` sentences.
 
- 1. Installing the prerequisites
+ Installing the prerequisites
 
   * Install your favorite Eclipse distribution
   * Install Maven 3: `sudo apt-get install maven`
 
- 2. Installing and configuring your PostgreSQL database
+ Installing and configuring your PostgreSQL database
 
   * Install PostgreSQL 9.1: `sudo apt-get install postgresql`
   * Create a new user: `sudo -u postgres createuser`
@@ -35,7 +35,7 @@ Tutorial
    - Know the status: `/etc/init.d/postgresql status`
    - Restart the service: `/etc/init.d/postgresql restart`
 
- 3. Creating your project
+ Creating your project
 
   * Create a new Github repository from this one
   * Clone your new repository: `git clone git@github.com:<YOUR_GITHUB_USER>/<YOUR_NEW_PROJECT_NAME>.git`
@@ -43,7 +43,7 @@ Tutorial
   * Run a `mvn clean install && mvn eclipse:clean eclipse:eclipse` on the `implementation` directory
   * Import your project into Eclipse
 
- 4. Deploying your application
+ Deploying your application
 
   * To start: `<ROOT_DIRECTORY>/tools/tomcat/bin/startup.sh`
   * To stop: `<ROOT_DIRECTORY>/tools/tomcat/bin/shutdown.sh`
