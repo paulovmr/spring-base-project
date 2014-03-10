@@ -17,10 +17,19 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
 		<java.version>1.7</java.version>
 
+		<baseproject-model.version>1.0</baseproject-model.version>
+		<baseproject-controller.version>1.0</baseproject-controller.version>
+
 		<spring.version>4.0.2.RELEASE</spring.version>
+		<spring-security.version>3.2.1.RELEASE</spring-security.version>
 		<hibernate.version>4.3.4.Final</hibernate.version>
+		<postgresql.version>9.1-901.jdbc4</postgresql.version>
+		<junit.version>4.11</junit.version>
+
+		<maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
   </properties>
 
 	<dependencyManagement>
@@ -29,12 +38,12 @@
 			<dependency>
 			  <groupId>com.baseproject.model</groupId>
 			  <artifactId>model</artifactId>
-				<version>1.0</version>
+				<version>${baseproject-model.version}</version>
 			</dependency>
 			<dependency>
 			  <groupId>com.baseproject.controller</groupId>
 			  <artifactId>controller</artifactId>
-				<version>1.0</version>
+				<version>${baseproject-controller.version}</version>
 			</dependency>
 
 			<dependency>
@@ -93,6 +102,17 @@
 			</dependency>
 
 			<dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-web</artifactId>
+        <version>${spring-security.version}</version>
+		  </dependency>
+		  <dependency>
+		      <groupId>org.springframework.security</groupId>
+		      <artifactId>spring-security-config</artifactId>
+		      <version>${spring-security.version}</version>
+		  </dependency>
+
+			<dependency>
 					<groupId>org.hibernate</groupId>
 					<artifactId>hibernate-entitymanager</artifactId>
 					<version>${hibernate.version}</version>
@@ -101,13 +121,13 @@
 			<dependency>
 				<groupId>postgresql</groupId>
 				<artifactId>postgresql</artifactId>
-				<version>9.1-901.jdbc4</version>
+				<version>${postgresql.version}</version>
 			</dependency>	
 			      
 			<dependency>
 			  <groupId>junit</groupId>
 			  <artifactId>junit</artifactId>
-			  <version>4.11</version>
+			  <version>${junit.version}</version>
 			  <scope>test</scope>
 			</dependency>
 
@@ -119,7 +139,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>${maven-compiler-plugin.version}</version>
 				<configuration>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
