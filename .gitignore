@@ -1,5 +1,5 @@
 *.class
-*/target/*
+target/
 
 # Package Files #
 *.jar
@@ -9,4 +9,4 @@
 # Log Files #
 *.log
 *.out
-*/logs/*
+logs/
