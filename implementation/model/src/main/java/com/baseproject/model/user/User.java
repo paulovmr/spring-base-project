@@ -12,4 +12,8 @@ public class User extends BaseEntity {
 
 	@Column
 	private String username;
+	
+	public String getUsername() {
+		return username;
+	}
 }

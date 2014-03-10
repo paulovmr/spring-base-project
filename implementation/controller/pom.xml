@@ -16,6 +16,7 @@
   <name>controller</name>
 
 	<dependencies>
+
 	  <dependency>
 	    <groupId>com.baseproject.model</groupId>
 	    <artifactId>model</artifactId>

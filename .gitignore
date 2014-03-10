@@ -1,13 +1,17 @@
 *.class
 target/
 .classpath
+.project
+.settings
 
 # Package Files #
 *.jar
 *.war
 *.ear
 
-# Log Files #
+# Tomcat Temp Files #
 *.log
 *.out
 logs/*
+work/*
+temp/*
