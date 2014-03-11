@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+
 die () {
     echo >&2 "$@"
     exit 1
@@ -6,7 +7,15 @@ die () {
 
 [ "$#" -eq 1 ] || die "1 argument required, $# provided"
 
-cd implementation/
+ROOT_DIRECTORY=$(pwd)
+
+# Application files
+cd $ROOT_DIRECTORY/implementation/
 shopt -s globstar
-rename "s/baseproject/$1/" **
-find . -type f -exec sed -i 's,baseproject,$1,g' {} \;
+rename -v "s/baseproject/$1/" **
+find . -type f -exec sed -i "s,baseproject,$1,g" {} \;
+
+# Tomcat files
+cd $ROOT_DIRECTORY/tools/tomcat/
+find conf/context.xml -type f -exec sed -i "s,baseproject,$1,g" {} \;
+mv webapps/view webapps/$1
