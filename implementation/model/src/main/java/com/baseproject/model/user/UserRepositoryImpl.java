@@ -3,6 +3,7 @@ package com.baseproject.model.user;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.persistence.NoResultException;
 import javax.persistence.Query;
 
 import org.springframework.stereotype.Repository;
@@ -17,13 +18,20 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<User> implements User
 	}
 
 	@Override
-	public User findUserByUsername(String username) {
+	public User findUserByUsernameWithProfiles(String username) {
 		Map<String, String> parameters = new HashMap<String, String>();
 		parameters.put("username", username);
 		
-		Query query = createQuery("FROM User WHERE username = :username");
+		Query query = createQuery("FROM User u LEFT JOIN FETCH u.profiles WHERE u.username = :username");
 		setParameters(query, parameters);
 		
-		return (User) query.getSingleResult();
+		User user;
+		try {
+			user = (User) query.getSingleResult();
+		} catch (NoResultException e) {
+			user = null;
+		}
+		
+		return user;
 	}
 }

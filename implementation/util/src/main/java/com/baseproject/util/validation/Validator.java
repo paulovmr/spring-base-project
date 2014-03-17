@@ -1,6 +1,7 @@
 package com.baseproject.util.validation;
 
 import java.lang.reflect.Field;
+import java.util.Collection;
 import java.util.List;
 
 import com.baseproject.util.utility.ReflectionUtils;
@@ -43,6 +44,14 @@ public class Validator {
 			}
 		}
 	}
+	
+	private static boolean stringIsEmpty(Object fieldValue) {
+		return fieldValue != null && fieldValue instanceof String && ((String) fieldValue).isEmpty();
+	}
+	
+	private static boolean collectionIsEmpty(Object fieldValue) {
+		return fieldValue != null && fieldValue instanceof Collection<?> && ((Collection<?>) fieldValue).isEmpty();
+	}
 
 	private static void checkNotEmptyAnnotation(Object object, Field field,
 			ValidationException validationException) {
@@ -53,7 +62,7 @@ public class Validator {
 				field.setAccessible(true);
 				Object fieldValue = field.get(object);
 
-				if (fieldValue == null || (fieldValue != null && ((String) fieldValue).isEmpty())) {
+				if (fieldValue == null || stringIsEmpty(fieldValue) || collectionIsEmpty(fieldValue)) {
 					ValidationFailure validationFailure = new ValidationFailure(object.getClass().getSimpleName(), field.getName(), FailureCause.EmptyAttribute);
 					validationException.addValidationFailure(validationFailure);
 				}

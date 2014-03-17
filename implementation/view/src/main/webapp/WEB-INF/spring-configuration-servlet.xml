@@ -30,4 +30,7 @@
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 
+	<bean id="userDetailsService" class="com.baseproject.controller.spring.MyUserDetailsService">
+	</bean>
+
 </beans>

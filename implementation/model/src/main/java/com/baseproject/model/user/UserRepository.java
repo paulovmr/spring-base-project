@@ -4,5 +4,5 @@ import com.baseproject.model.common.BaseRepository;
 
 public interface UserRepository extends BaseRepository<User> {
 
-	User findUserByUsername(String username);
+	User findUserByUsernameWithProfiles(String username);
 }

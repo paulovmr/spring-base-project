@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+	    
+	    <link rel="shortcut icon" href="images/favicon.ico">
+	    
+	    <link rel="stylesheet" href="css/bootstrap.min.css">
+	    <link rel="stylesheet" href="css/signin.css">
+	    <link rel="stylesheet" href="css/custom/general.css">
+	    
+	    <script src="js/jquery-1.11.0.js"></script>
+	    <script src="js/custom/login.js"></script>
+	
+	    <title>baseproject</title>
+	
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="container">
+			<form id="login-form" class="form-signin" role="form" method="POST">
+				<div style="
+				    background: url(images/logo.png) no-repeat;
+				    height: 64px;
+				    vertical-align: middle;
+				    display: inline-table;
+				    margin-bottom: 5px;
+				    padding-left: 76px;
+				">
+					<h2 class="form-signin-heading">baseproject</h2>
+				</div>
+				<div id="alert-invalid-login" class="alert alert-danger hidden">Senha inválida!</div>
+				<div id="alert-unavailable-login" class="alert alert-danger hidden">Login indisponível. Tente mais tarde.</div>
+				<input type="text" id="username" name="username" class="form-control" placeholder="Usuário" required="" autofocus="" />
+				<input type="password" id="password" name="password" class="form-control" placeholder="Senha" required="" />
+				<input type="submit" id="login" class="btn btn-lg btn-primary btn-block" value="Entrar" />
+			</form>
+		</div>
+	</body>
+</html>
